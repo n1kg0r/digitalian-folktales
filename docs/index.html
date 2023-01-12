@@ -1,12 +1,185 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+    </head>
 
-<head>
+    <body>
+        
+        <div class="contents">
 
-</head>
+            <section class="contents-header">
+                <div class = "contents-header-menu">
+                    <span><a href="index.html" style="cursor: not-allowed;">who we are</a></span>
+                    <span><a href="index.html" style="cursor: not-allowed;">IT</a></span>
+                </div>
+            </section>
 
-<body>
-hi
-</body>
+
+
+            <section class="contents-body">
+
+                <div class="contents-inner">
+
+                    <div class="logo-container">
+                        <div class = "logo">
+                            <span>digitalian</span>
+                            <span>folktales</span>
+                        </div>
+                    </div>
+
+                    <div class="searchbar-container">
+                        <input class="search-input" placeholder="i.e. Gesù e San Pietro in Friuli" autofocus/>
+                    </div>
+
+                    <div class="searchbar-footer">
+                        <div class = "searchbar-footer-buttons">
+                            <span><a href="index.html" style="cursor: not-allowed;">advanced search</a></span>
+                            <span><a href="index.html">compare two folkstories</a></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+        </div>
+    </body>
+
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contents {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 2rem 1fr;
+
+            height: calc(100% - 2rem);
+            width: calc(100% - 2rem);
+            
+
+        }
+
+        .contents-header {
+            height: 2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: center;   
+        }
+
+        .contents-header-menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center; 
+        }
+
+        
+        .contents-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            
+        }
+
+        .contents-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 11fr 3rem 10fr;
+
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        
+
+        .searchbar-container {
+            border-radius: 1.4rem;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .search-input {
+            width: calc(100% - 3rem);
+            border: 0;
+            outline: none;
+            font-size: 1.2rem;
+            
+        }
+
+        .search-input::placeholder{
+            color: lightgray;
+            font-size: 1rem;
+        }
+        
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 0.1rem;
+        }
+
+        .logo span {
+            width: 100%;
+            font-size: 6rem;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 5.4rem;
+            letter-spacing: 0.05rem;
+            cursor:default;
+
+            -webkit-user-select: none; /* Safari */        
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE10+/Edge */
+            user-select: none; /* Standard */
+
+            
+        }
+
+
+        .searchbar-footer {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .searchbar-footer-buttons {
+            margin-top: 0.2rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            
+        }
+
+        .searchbar-footer-buttons span, .contents-header-menu span{
+            line-height: 1.8rem;
+            font-size: 1rem;
+            font-family: Arial, sans-serif;
+        }
+
+        .searchbar-footer-buttons a, .contents-header-menu a {
+
+            color: grey;
+        }
+
+
+    </style>
 </html>
