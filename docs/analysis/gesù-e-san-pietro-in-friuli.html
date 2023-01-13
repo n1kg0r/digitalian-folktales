@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../style/index.css">
+        <script src="https://d3js.org/d3.v6.js"></script>
+    </head>
+
+    <body>
+        
+        <div class="contents">
+
+            <section class="contents-header">
+                <div class="logo-container">
+                    <div class = "logo-small">
+                        <span><a href="../index.html">digitalian</a></span>
+                        <span><a href="../index.html">folktales</a></span>
+                    </div>
+                </div>
+                <div style="flex-grow: 1;"></div>
+                
+                <div class = "contents-header-menu">
+                    <span><a href="index.html" style="cursor: not-allowed;">user guide</a></span>
+                    <span><a href="index.html" style="cursor: not-allowed;">who we are</a></span>
+                    <span><a href="index.html" style="cursor: not-allowed;">IT</a></span>
+                </div>
+            </section>
+
+
+
+            <section class="contents-body">
+
+                <div class="contents-story" style=" width: 100%; height: 100%">
+                    
+                    <div class="contents-story-body">
+
+                        <section class="map" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <svg id="my_dataviz"  style="width: fit-content; height: fit-content; min-height:30rem; min-width: 25rem;">
+
+                            </svg>
+                        </section>
+
+                        <section class="story-texts">
+
+                        </section>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+        </div>
+    </body>
+
+    
+
+    <script>
+        const namesToURLs = [
+            {
+                name: 'Gesù e San Pietro in Friuli',
+                url: 'analysis/gesù-e-san-pietro-in-friuli.html'
+            },
+            {
+                name: 'Gesù e San Pietro in Sicilia',
+                url: 'analysis/gesù-e-san-pietro-in-sicilia.html'
+            }
+    ]
+
+        function onInput() {
+            var val = document.getElementById('search-input').value;
+            var opts = document.getElementById('stories-names').childNodes;
+            for (var i = 0; i < opts.length; i++) {
+
+                if (opts[i].value === val) {
+
+                    namesToURLs.forEach(element => 
+                        {
+                            if (element.name === val) {
+                                window.open(element.url,"_self")
+                            }
+                        }
+                    );
+
+                    break;
+                }
+            }
+        }
+
+
+
+        // The svg
+        const svg = d3.select("svg")
+        // Map and projection
+        const projection = d3.geoMercator()
+            .center([9, 47])                // GPS of location to zoom on
+            .scale(1700)                       // This is like the zoom
+            .translate([ 100,20 ])
+        
+        // Load external data and boot
+        //d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then( function(data){
+            d3.json("../topojson/it1.geojson").then( function(data){
+            
+            // Filter data
+
+            // Draw the map
+            svg.append("g")
+                .selectAll("path")
+                .data(data.features)
+                .join("path")
+                .attr("d", d3.geoPath()
+                    .projection(projection)
+                )
+                .style("stroke", "black") 
+                .style("fill", "none") 
+
+            
+            
+            console.log(svg.selectAll("path"))
+        })
+    </script>
+</html>

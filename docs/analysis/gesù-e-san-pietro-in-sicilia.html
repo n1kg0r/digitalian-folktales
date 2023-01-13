@@ -3,7 +3,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="style/index.css">
+        <link rel="stylesheet" href="../style/index.css">
+        <script src="https://d3js.org/d3.v6.js"></script>
     </head>
 
     <body>
@@ -11,7 +12,14 @@
         <div class="contents">
 
             <section class="contents-header">
+                <div class="logo-container">
+                    <div class = "logo-small">
+                        <span><a href="../index.html">digitalian</a></span>
+                        <span><a href="../index.html">folktales</a></span>
+                    </div>
+                </div>
                 <div style="flex-grow: 1;"></div>
+
                 <div class = "contents-header-menu">
                     <span><a href="index.html" style="cursor: not-allowed;">user guide</a></span>
                     <span><a href="index.html" style="cursor: not-allowed;">who we are</a></span>
@@ -23,30 +31,9 @@
 
             <section class="contents-body">
 
-                <div class="contents-search-page">
+                <div class="contents-story">
 
-                    <div class="logo-container">
-                        <div class = "logo">
-                            <span>digitalian</span>
-                            <span>folktales</span>
-                        </div>
-                    </div>
-
-                    <div class="searchbar-container">
-                        <input class="search-input" placeholder="e.g. Gesù e San Pietro in Friuli" 
-                        list="stories-names" autofocus oninput='onInput()' id='search-input'/>
-                        <datalist id="stories-names">
-                            <option value="Gesù e San Pietro in Friuli">
-                            <option value="Gesù e San Pietro in Sicilia">
-                        </datalist>
-                    </div>
                     
-                    <div class="searchbar-footer">
-                        <div class = "searchbar-footer-buttons">
-                            <span><a href="index.html" style="cursor: not-allowed;">advanced search</a></span>
-                            <span><a href="index.html">compare two folkstories</a></span>
-                        </div>
-                    </div>
 
                 </div>
             </section>

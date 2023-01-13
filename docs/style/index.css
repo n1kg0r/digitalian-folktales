@@ -1,0 +1,160 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contents {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2rem 1fr;
+
+    height: calc(100% - 2rem);
+    width: calc(100% - 2rem);
+    
+
+}
+
+.contents-header {
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    
+}
+
+.contents-header-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+.contents-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contents-search-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 11fr 3rem 10fr;
+}
+
+.contents-story {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 1rem 1fr 1rem;
+}
+
+.contents-story-body {
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 4; 
+
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+}
+
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.searchbar-container {
+    border-radius: 1.4rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.search-input {
+    width: calc(100% - 3rem);
+    border: 0;
+    outline: none;
+    font-size: 1.2rem;
+    
+}
+
+.search-input::placeholder{
+    color: lightgray;
+    font-size: 1rem;
+}
+
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0.1rem;
+}
+
+.logo span, .logo-small span {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    cursor:default;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+}
+
+.logo span {
+    width: 100%;
+    font-size: 6rem;
+    line-height: 5.4rem;
+    letter-spacing: 0.05rem;
+}
+
+.logo-small {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo-small a {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.01rem;
+    color: black;
+    text-decoration: none;
+}
+
+.searchbar-footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.searchbar-footer-buttons {
+    margin-top: 0.2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.searchbar-footer-buttons span, .contents-header-menu span{
+    line-height: 1.8rem;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.searchbar-footer-buttons a, .contents-header-menu a {
+
+    color: grey;
+}
