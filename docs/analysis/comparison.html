@@ -29,7 +29,7 @@
                     font-family: 'Courier New', Courier, monospace;
                     cursor: default;
                     font-size: 2.2rem;
-                    ">Gesù e San Pietro in Friuli</span>
+                    ">Comparing Stories</span>
                 </div>
                 
                 <div class = "contents-header-menu">
@@ -43,90 +43,18 @@
 
             <section class="contents-body">
 
-                <div class="contents-story" style=" width: 100%; height: 100%; ">
+                <div class="contents-comparison" style=" width: 100%; height: 100%; ">
                     
-                    <div class="contents-story-body" >
+                    <div class="contents-comparison-body">
 
-                        <section class="map-section" style="display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr 6fr; ">
-                            <div style="width: 100%;  display: flex; justify-content: center; align-items: flex-end;">
-                                <span class="map-label">suggested stories</span>
-                            </div>
-                            <div id="map-container" style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                                <!--<span>see also these stories...</span>-->
-                                <svg id="map-contents"  style="width: fit-content; height: fit-content; min-height:30rem; min-width: 25rem;">
-
-                                </svg>
-                                <div class="tooltip">
-                                    
-                                    <span class="tooltip-contents"
-                                        style="
-                                            width: fit-content;
-                                            margin: 2.5%;
-                                            display: flex;
-                                            flex-direction: column;
-                                            align-items: center;
-                                        "
-                                    >
-
-                                    <div class="tooltip-close" 
-                                    onclick="d3.select('.tooltip').style('opacity', 0)"
-                                    style="
-                                        position: relative;
-                                        display: flex;
-                                        flex-direction: row;
-                                        width: 100%;
-                                        justify-content: flex-end;
-                                        text-align: right;
-                                        font-family: 'Courier New', Courier, monospace;
-                                        font-size: 1rem;
-                                        line-height: 0.5rem;
-                                        cursor: pointer;
-                                    "
-                                    >
-                                        &#x00d7;
-                                    </div>
-
-
-                                        <div class="tooltip-header" 
-                                            style="
-                                                width: 100%; 
-                                                font-size: 0.8rem;
-                                                font-family: Courier, monospace;
-                                                margin-bottom: 0.5rem;
-                                                
-                                            ">
-                                            Gesù e San Pietro in Sicilia
-                                        </div>
-                                        <div class="tooltip-line" 
-                                            style="
-                                                width: 100%; 
-                                                font-size: 0.8rem;
-                                                font-family:'Courier New', Courier, monospace;
-                                            ">
-                                            <a href="gesù-e-san-pietro-in-sicilia.html" style="color: black;">explore this story</a>
-                                        </div>
-
-                                        <div class="tooltip-line" 
-                                            style="
-                                                width: 100%; 
-                                                font-size: 0.8rem;
-                                                font-family:'Courier New', Courier, monospace;
-                                            ">
-                                            <a href="comparison.html" style="color: black;">compare stories</a>
-                                        </div>
-
-
-                                    </span>
-
-                                </div>
-                            </div>
-                        </section>
+                        
 
                         <section class="carousel-section;" style="height: 100%; width: 100%;  display: flex;
                             position: relative;
                             overflow: hidden;
                             justify-content: center;
-                            align-items: center;"
+                            align-items: center;
+                            "
                         >
 
                               <button class="slide-arrow arrow-disabled" id="slide-arrow-prev">
@@ -150,11 +78,11 @@
                               ">
                                 <li class="slide" >
                                     <div class="original-header" style="grid-column: 1; grid-row: 1;  display: flex; justify-content: center; align-items: flex-end;">
-                                        <span class="map-label">original text</span>
+                                        <span class="map-label"><a href="gesù-e-san-pietro-in-friuli.html">Gesù e San Pietro in Friuli</a></span>
                                     </div>
         
                                     <div class="translation-header" style="grid-column: 2; grid-row: 1;  display: flex; justify-content: center; align-items: flex-end;">
-                                        <span class="map-label">Italian translation</span>
+                                        <span class="map-label"><a href="gesù-e-san-pietro-in-friuli.html">Gesù e San Pietro in Sicilia</a></span>
                                     </div>
         
                                     <div class="original-text" style="grid-column: 1; grid-row: 2;  display: flex; justify-content: center; align-items: center;">
@@ -173,11 +101,11 @@
                                 </li>
                                 <li class="slide">
                                     <div class="original-header" style="grid-column: 1; grid-row: 1;  display: flex; justify-content: center; align-items: flex-end;">
-                                        <span class="map-label">story's typology</span>
+                                        <span class="map-label">stories' typology</span>
                                     </div>
         
                                     <div class="translation-header" style="grid-column: 2; grid-row: 1;  display: flex; justify-content: center; align-items: flex-end;">
-                                        <span class="map-label">story's measurements</span>
+                                        <span class="map-label">stories' measurements</span>
                                     </div>
         
                                     <div class="original-text" style="grid-column: 1; grid-row: 2;  display: flex; justify-content: center; align-items: center;">
@@ -190,53 +118,67 @@
                                                 overflow-y: scroll; 
                                                 max-height: 28rem;
                                                 display: grid;
-                                                grid-template-columns: 2fr 3fr;
+                                                grid-template-columns: 2fr 3fr 3fr;
                                                 grid-template-rows: repeat(14, 1fr);
                                                 ">
 
-                                                <span class="typology-feature" style="grid-column-start: 1; grid-column-end: 3; font-size: 1.2rem; font-family: Courier, monospace; border-right: none">document's features</span>     
+                                                <span class="typology-feature" style="grid-column-start: 1; grid-column-end: 4; font-size: 1.2rem; font-family: Courier, monospace; border-right: none">document's features</span>     
 
                                                 <span class="typology-feature">name</span>
-                                                <span>Gesù e San Pietro in Friuli</span>
+                                                <span class="table-middle">Gesù e San Pietro in Friuli</span>
+                                                <span>Gesù e San Pietro in Sicilia</span>
 
                                                 <span class="typology-feature">geography of origin</span>
-                                                <span>I: Cormòns<br/>II: Cormòns<br/>III: Enemonzo e Preone</span>
+                                                <span class="table-middle">I: Cormòns<br/>II: Cormòns<br/>III: Enemonzo e Preone</span>
+                                                <span>Storia I e II Bagheria (PA)</span>
 
                                                 <span class="typology-feature">documentation time</span>
-                                                <span>Not Specified</span>
+                                                <span class="table-middle" style="justify-content: right;
+                                                text-align: right;
+                                                margin-right: 0;">Not Specified</span>
+                                                <span style="justify-content: right;
+                                                text-align: right;
+                                                margin-right: 0;">Not Specified</span>
 
                                                 <span class="typology-feature">ATU Index</span>
-                                                <span>I: 774 Jests about Christ and Peter<br/><br/>II: 785 Lamb’s heart<br/><br/>III: 750B Hospitality Rewarded</span>
+                                                <span class="table-middle">I: 774 Jests about Christ and Peter<br/><br/>II: 785 Lamb’s heart<br/><br/>III: 750B Hospitality Rewarded</span>
+                                                <span>774: Jests About Christ and Peter</span>
 
                                                 <span class="typology-feature">narrator/original name</span>
-                                                <span>I: Mrs. Caterina Braida (Minèn) <br/><br/>II: Mr. Giovanni Minèn <br/><br/>III: Mrs. Iole Taddio (Iole di Mini)</span>
+                                                <span class="table-middle">I: Mrs. Caterina Braida (Minèn) <br/><br/>II: Mr. Giovanni Minèn <br/><br/>III: Mrs. Iole Taddio (Iole di Mini)</span>
+                                                <span>Mr. Gargano</span>
 
                                                 <span class="typology-feature">Calvino's source</span>
-                                                <span>Dolfo Zorzùt, Sot la nape…(I racconti del popolo friulano) (3 voll.) Udine 1924, 1925, 1927.</span>
-
+                                                <span class="table-middle">Dolfo Zorzùt, Sot la nape…(I racconti del popolo friulano) (3 voll.) Udine 1924, 1925, 1927.</span>
+                                                <span>Fiabe, novelle e racconti popolari siciliani, raccolti e illustrati da Giuseppe Pitrè (4 voll.), Palermo 1875. Part of Biblioteca delle tradizioni popolari siciliane, voll. IV-VII.</span>
                                                 
 
-                                                <span class="typology-feature" style="border-right: none; grid-column-start: 1; grid-column-end: 3; padding-top: 3rem;  font-size: 1.2rem; font-family: Courier, monospace;">Propp's ontology</span>   
+                                                <span class="typology-feature" style="border-right: none; grid-column-start: 1; grid-column-end: 4; padding-top: 3rem;  font-size: 1.2rem; font-family: Courier, monospace;">Propp's ontology</span>   
 
                                                 <span class="typology-feature">resolution</span>
-                                                <span>I: Positive <br/>II: Positive <br/>III: Positive </span>
+                                                <span class="table-middle">I: Positive <br/>II: Positive <br/>III: Positive </span>
+                                                <span>I: Mixed <br/>II: Positive</span>    
 
                                                 <span class="typology-feature">animals</span>
-                                                <span>II: Hare</span>
+                                                <span class="table-middle">II: Hare</span>
+                                                <span>None</span>
 
                                                 <span class="typology-feature">places</span>
-                                                <span>I: Peter’s house, road, field <br/><br/>II: Village, Town, King’s daughter room <br/><br/>III: Woman’s house, Poor house, Manure
-                                                </span>
+                                                <span class="table-middle">I: Peter’s house, road, field <br/><br/>II: Village, Town, King’s daughter room <br/><br/>III: Woman’s house, Poor house, Manure</span>
+                                                <span>I: Countryside/ Road, Village 1, Village 2. <br/><br/>II: Outside, Dead Woman House</span>
 
                                                 <span class="typology-feature">action or events</span>
-                                                <span>II: Joke, healing</span>
+                                                <span class="table-middle">II: Joke, healing</span>
+                                                <span>I: Transmutation, Joke <br/>II: Death, Resurrection</span>
 
                                                 <span class="typology-feature">people</span>
-                                                <span>I: Peter, Peter’s wife, Stranger/ The Lord, Delusional Owners <br/><br/>II: The Lord, St. Peter, Host, Soldier 1, King, King’s daughter, physicians, Soldiers <br/><br/>III: Jesus, St. Peter, Comare Giacoma, Mrs. Catìn 
+                                                <span class="table-middle">I: Peter, Peter’s wife, Stranger/ The Lord, Delusional Owners <br/><br/>II: The Lord, St. Peter, Host, Soldier 1, King, King’s daughter, physicians, Soldiers <br/><br/>III: Jesus, St. Peter, Comare Giacoma, Mrs. Catìn 
                                                 </span>
+                                                <span>I: Apostles, Jesus, St. Peter <br/><br/>II: Apostles, <br/>The Master/ The Lord, St. Peter, Man 1, Man 2, Mother.</span>
 
                                                 <span class="typology-feature">supernatural beings</span>
-                                                <span>II: The Lord</span>
+                                                <span class="table-middle">II: The Lord</span>
+                                                <span>I: Jesus *He is capable of the magical features in the text <br/><br/>II: The Master/ The Lord *He is capable of the magical features in the text </span>
 
                                             </div>
                                             
@@ -253,55 +195,69 @@
                                                 overflow-y: scroll; 
                                                 max-height: 28rem;
                                                 display: grid;
-                                                grid-template-columns: 2fr 3fr;
+                                                grid-template-columns: 4fr 3fr 3fr;
                                                 grid-template-rows: repeat(13, 1fr);
                                                 ">
 
+                                                
+
                                                 <span class="typology-feature" 
                                                 style="grid-column-start: 1; 
-                                                grid-column-end: 3; 
+                                                grid-column-end: 4; 
                                                 font-size: 1.2rem; 
                                                 font-family: Courier, monospace;
                                                 border-right: none">basic metrics</span>     
 
+
+                                                <span class="typology-feature">name</span>
+                                                <span class="table-middle">Gesù e San Pietro in Friuli</span>
+                                                <span>Gesù e San Pietro in Sicilia</span>
+
                                                 <span class="typology-feature">average sentence length</span>
-                                                <span>12.74</span>
+                                                <span class="table-middle">12.74</span>
+                                                <span>11.88</span>
 
                                                 <span class="typology-feature">maximum sentence length</span>
-                                                <span>50</span>
+                                                <span class="table-middle">50</span>
+                                                <span>38</span>
 
                                                 <span class="typology-feature">average word length</span>
-                                                <span>4.08</span>
+                                                <span class="table-middle">4.08</span>
+                                                <span>4.18</span>
 
                                                 <span class="typology-feature">maximum word length</span>
-                                                <span>16</span>
+                                                <span class="table-middle">16</span>
+                                                <span>15</span>
 
                                                 <span class="typology-feature">average of syllables per word</span>
-                                                <span>1.76</span>
+                                                <span class="table-middle">1.76</span>
+                                                <span>1.79</span>
 
 
                                                 
 
                                                 <span class="typology-header" 
                                                 style="grid-column-start: 1; 
-                                                grid-column-end: 3; 
+                                                grid-column-end: 4; 
                                                 padding-top: 3rem;  
                                                 font-size: 1.2rem; 
                                                 font-family: Courier, monospace;
                                                 border-right: none; justify-content: left;">vocabulary</span>   
 
                                                 <span class="typology-feature">type-token ratio</span>
-                                                <span>0.31</span>
+                                                <span class="table-middle">0.31</span>
+                                                <span>0.36</span>
 
                                                 <span class="typology-feature">lexical density</span>
-                                                <span>0.45</span>
+                                                <span class="table-middle">0.45</span>
+                                                <span>0.5</span>
 
 
 
 
                                                 <span class="typology-header" 
                                                 style="grid-column-start: 1; 
-                                                grid-column-end: 3; 
+                                                grid-column-end: 4; 
                                                 padding-top: 3rem;  
                                                 font-size: 1.2rem; 
                                                 font-family: Courier, monospace;
@@ -309,29 +265,35 @@
                                                 justify-content: left;">text complexity</span>   
 
                                                 <span class="typology-feature">hard words quantity</span>
-                                                <span>602</span>
+                                                <span class="table-middle">602</span>
+                                                <span>393</span>
 
                                                 <span class="typology-feature">Fry readability formula</span>
-                                                <span>45.37</span>
+                                                <span class="table-middle">45.37</span>
+                                                <span>43.67</span>
 
                                                 <span class="typology-feature">Gunning fog index</span>
-                                                <span>13.04</span>
+                                                <span class="table-middle">13.04</span>
+                                                <span>13.18</span>
 
                                                 <span class="typology-feature">automated readability index</span>
-                                                <span>3.79</span>
+                                                <span class="table-middle">3.79</span>
+                                                <span>3.86</span>
 
                                                 <span class="typology-feature">SMOG grade</span>
-                                                <span>12.21</span>
+                                                <span class="table-middle">12.21</span>
+                                                <span>12.16</span>
 
                                                 <span class="typology-feature">Coleman–Liau index</span>
-                                                <span>5.40</span>
+                                                <span class="table-middle">5.40</span>
+                                                <span>5.86</span>
 
 
 
 
                                                 <span class="typology-header" 
                                                 style="grid-column-start: 1; 
-                                                grid-column-end: 3; 
+                                                grid-column-end: 4; 
                                                 padding-top: 3rem;  
                                                 font-size: 1.2rem; 
                                                 font-family: Courier, monospace;
@@ -339,10 +301,12 @@
                                                 justify-content: left;">sentiment analysis / <br/> MilaNLProc model</span>   
 
                                                 <span class="typology-feature">average sentence positivity</span>
-                                                <span>0.9882</span>
+                                                <span class="table-middle">0.9882</span>
+                                                <span>0.9971</span>
 
                                                 <span class="typology-feature">sentence positivity std</span>
-                                                <span>0.0482</span>
+                                                <span class="table-middle">0.0482</span>
+                                                <span>0.0178</span>
 
 
 

@@ -65,6 +65,30 @@ body {
 }
 
 
+
+
+
+.contents-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1rem 1fr 1rem;
+}
+
+.contents-comparison-body {
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 3; 
+
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+
+
+
+
+
 .logo-container {
     display: flex;
     justify-content: center;
@@ -163,6 +187,13 @@ body {
 
     color: grey;
 }
+
+.contents-header-menu {
+    color: gray;
+    cursor: not-allowed;
+    text-decoration: underline;
+}
+
 
 
 
@@ -289,9 +320,14 @@ body {
     border-right: 1px solid grey;
   }
 
+  .typology-table span.table-middle {
+    border-right: 1px solid grey;
+  }
+
   .translation-text .typology-table span,  .original-text .typology-table span {
-    justify-content: end;
+    justify-content: right;
     text-align: right;
+    margin-right: 0;
   }
 
   .translation-text .typology-table span.typology-feature,
@@ -300,4 +336,22 @@ body {
     
     justify-content: start;
     text-align: left;
+  }
+
+  .tooltip {
+    opacity: 0;
+    background-color: white; 
+    position: absolute; 
+    border-radius: 0.2rem; 
+    box-shadow: lightgray 0px 0px 10px 1px;
+    transition: opacity 100ms ease 0s;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .map-label a {
+    color: black;
+    text-decoration: none;
   }
