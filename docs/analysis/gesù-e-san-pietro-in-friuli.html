@@ -11,14 +11,26 @@
         
         <div class="contents">
 
-            <section class="contents-header">
+            <section class="contents-header" style="min-width: 60rem;">
                 <div class="logo-container">
                     <div class = "logo-small">
                         <span><a href="../index.html">digitalian</a></span>
                         <span><a href="../index.html">folktales</a></span>
                     </div>
                 </div>
-                <div style="flex-grow: 1;"></div>
+                <div style="width: 4rem;"></div>
+                <div style="
+                flex-grow: 1; 
+                display: flex; 
+                justify-content: center; 
+                align-items: baseline; 
+                ">
+                    <span style="text-align: center;
+                    font-family: 'Courier New', Courier, monospace;
+                    cursor: default;
+                    font-size: 2.2rem;
+                    ">Gesù e San Pietro in Friuli</span>
+                </div>
                 
                 <div class = "contents-header-menu">
                     <span><a href="index.html" style="cursor: not-allowed;">user guide</a></span>
@@ -31,18 +43,253 @@
 
             <section class="contents-body">
 
-                <div class="contents-story" style=" width: 100%; height: 100%">
+                <div class="contents-story" style=" width: 100%; height: 100%; ">
                     
-                    <div class="contents-story-body">
+                    <div class="contents-story-body" >
 
-                        <section class="map" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                            <svg id="my_dataviz"  style="width: fit-content; height: fit-content; min-height:30rem; min-width: 25rem;">
+                        <section class="map-section" style="display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr 6fr; ">
+                            <div style="width: 100%;  display: flex; justify-content: center; align-items: flex-end;">
+                                <span class="map-label">suggested stories</span>
+                            </div>
+                            <div style=" display: flex; flex-direction: column; justify-content: flex-start; align-items: center;">
+                                <!--<span>see also these stories...</span>-->
+                                <svg id="map-contents"  style="width: fit-content; height: fit-content; min-height:30rem; min-width: 25rem; ">
 
-                            </svg>
+                                </svg>
+                            </div>
                         </section>
 
-                        <section class="story-texts">
+                        <section class="carousel-section;" style="height: 100%; width: 100%;  display: flex;
+                            position: relative;
+                            overflow: hidden;
+                            justify-content: center;
+                            align-items: center;"
+                        >
 
+                              <button class="slide-arrow arrow-disabled" id="slide-arrow-prev">
+                                &#8249;
+                              </button>
+                              <button class="slide-arrow" id="slide-arrow-next">
+                                &#8250;
+                              </button>
+
+                              <ul class="slides-container" id="slides-container" style="
+                                display: flex;
+                                overflow-x: hidden;
+                                overflow-y: hidden;
+                                scroll-behavior: smooth;
+                                list-style: none;
+                                width: 100%;
+                                height: 100%;
+                                margin: 0;
+                                padding: 0;
+                                min-height: 36rem;
+                              ">
+                                <li class="slide" >
+                                    <div class="original-header" style="grid-column: 1; grid-row: 1;  display: flex; justify-content: center; align-items: flex-end;">
+                                        <span class="map-label">original text</span>
+                                    </div>
+        
+                                    <div class="translation-header" style="grid-column: 2; grid-row: 1;  display: flex; justify-content: center; align-items: flex-end;">
+                                        <span class="map-label">Italian translation</span>
+                                    </div>
+        
+                                    <div class="original-text" style="grid-column: 1; grid-row: 2;  display: flex; justify-content: center; align-items: center;">
+                                        <span style="width: 90%; min-width: 15rem; height: 90%; min-height: 30rem; border-radius: 0.2rem; box-shadow: 0px 0px 10px 1px lightgray; display: flex; justify-content: center; align-items: center;">
+                                            <p style="width: 90%; height: 90%;  overflow-y: scroll; max-height: 28rem">
+                                            </p>
+                                        </span>
+                                    </div>
+        
+                                    <div class="translation-text" style="grid-column: 2; grid-row: 2;  display: flex; justify-content: center; align-items: center;">
+                                        <span style="width: 90%; min-width: 15rem; height: 90%; min-height: 30rem; border-radius: 0.2rem; box-shadow: 0px 0px 10px 1px lightgray; display: flex; justify-content: center; align-items: center;">
+                                            <p style="width: 90%; height: 90%;  overflow-y: scroll; max-height: 28rem">
+                                            </p>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="slide">
+                                    <div class="original-header" style="grid-column: 1; grid-row: 1;  display: flex; justify-content: center; align-items: flex-end;">
+                                        <span class="map-label">story's typology</span>
+                                    </div>
+        
+                                    <div class="translation-header" style="grid-column: 2; grid-row: 1;  display: flex; justify-content: center; align-items: flex-end;">
+                                        <span class="map-label">story's measurements</span>
+                                    </div>
+        
+                                    <div class="original-text" style="grid-column: 1; grid-row: 2;  display: flex; justify-content: center; align-items: center;">
+                                        
+                                        <span style="width: 90%; min-width: 15rem; height: 90%; min-height: 30rem; border-radius: 0.2rem; box-shadow: 0px 0px 10px 1px lightgray; display: flex; justify-content: center; align-items: center;">
+                                            <div class="typology-table" 
+                                                style="
+                                                width: 90%; 
+                                                height: 90%;  
+                                                overflow-y: scroll; 
+                                                max-height: 28rem;
+                                                display: grid;
+                                                grid-template-columns: 2fr 3fr;
+                                                grid-template-rows: repeat(13, 1fr);
+                                                ">
+
+                                                <span class="typology-feature" style="grid-column-start: 1; grid-column-end: 3; font-size: 1.2rem; font-family: Courier, monospace; border-right: none">document's features</span>     
+
+                                                <span class="typology-feature">name</span>
+                                                <span>Gesù e San Pietro in Friuli</span>
+
+                                                <span class="typology-feature">geography of origin</span>
+                                                <span>I: Cormòns;<br/>II: Cormòns;<br/>III: Enemonzo e Preone </span>
+
+                                                <span class="typology-feature">documentation time</span>
+                                                <span></span>
+
+                                                <span class="typology-feature">ATU Index</span>
+                                                <span></span>
+
+                                                <span class="typology-feature">narrator/original name</span>
+                                                <span></span>
+
+                                                <span class="typology-feature">Calvino's source</span>
+                                                <span></span>
+
+                                                
+
+                                                <span class="typology-feature" style="border-right: none; grid-column-start: 1; grid-column-end: 3; padding-top: 3rem;  font-size: 1.2rem; font-family: Courier, monospace;">Propp's ontology</span>   
+
+                                                <span class="typology-feature">resolution</span>
+                                                <span></span>
+
+                                                <span class="typology-feature">animals</span>
+                                                <span></span>
+
+                                                <span class="typology-feature">places</span>
+                                                <span></span>
+
+                                                <span class="typology-feature">action or events</span>
+                                                <span></span>
+
+                                                <span class="typology-feature">people</span>
+                                                <span></span>
+
+                                            </div>
+                                            
+                                        </span>
+                                    </div>
+        
+                                    <div class="translation-text" style="grid-column: 2; grid-row: 2;  display: flex; justify-content: center; align-items: center;">
+                                        
+                                        <span style="width: 90%; min-width: 15rem; height: 90%; min-height: 30rem; border-radius: 0.2rem; box-shadow: 0px 0px 10px 1px lightgray; display: flex; justify-content: center; align-items: center;">
+                                            <div class="typology-table" 
+                                                style="
+                                                width: 90%; 
+                                                height: 90%;  
+                                                overflow-y: scroll; 
+                                                max-height: 28rem;
+                                                display: grid;
+                                                grid-template-columns: 2fr 3fr;
+                                                grid-template-rows: repeat(13, 1fr);
+                                                ">
+
+                                                <span class="typology-feature" 
+                                                style="grid-column-start: 1; 
+                                                grid-column-end: 3; 
+                                                font-size: 1.2rem; 
+                                                font-family: Courier, monospace;
+                                                border-right: none">basic metrics</span>     
+
+                                                <span class="typology-feature">average sentence length</span>
+                                                <span>12.74</span>
+
+                                                <span class="typology-feature">maximum sentence length</span>
+                                                <span>50</span>
+
+                                                <span class="typology-feature">average word length</span>
+                                                <span>4.08</span>
+
+                                                <span class="typology-feature">maximum word length</span>
+                                                <span>16</span>
+
+                                                <span class="typology-feature">average of syllables per word</span>
+                                                <span>1.76</span>
+
+
+                                                
+
+                                                <span class="typology-header" 
+                                                style="grid-column-start: 1; 
+                                                grid-column-end: 3; 
+                                                padding-top: 3rem;  
+                                                font-size: 1.2rem; 
+                                                font-family: Courier, monospace;
+                                                border-right: none; justify-content: left;">vocabulary</span>   
+
+                                                <span class="typology-feature">type-token ratio</span>
+                                                <span>0.31</span>
+
+                                                <span class="typology-feature">lexical density</span>
+                                                <span>0.45</span>
+
+
+
+
+                                                <span class="typology-header" 
+                                                style="grid-column-start: 1; 
+                                                grid-column-end: 3; 
+                                                padding-top: 3rem;  
+                                                font-size: 1.2rem; 
+                                                font-family: Courier, monospace;
+                                                border-right: none;
+                                                justify-content: left;">text complexity</span>   
+
+                                                <span class="typology-feature">hard words quantity</span>
+                                                <span>602</span>
+
+                                                <span class="typology-feature">Fry readability formula</span>
+                                                <span>45.37</span>
+
+                                                <span class="typology-feature">Gunning fog index</span>
+                                                <span>13.04</span>
+
+                                                <span class="typology-feature">automated readability index</span>
+                                                <span>3.79</span>
+
+                                                <span class="typology-feature">SMOG grade</span>
+                                                <span>12.21</span>
+
+                                                <span class="typology-feature">Coleman–Liau index</span>
+                                                <span>5.40</span>
+
+
+
+
+                                                <span class="typology-header" 
+                                                style="grid-column-start: 1; 
+                                                grid-column-end: 3; 
+                                                padding-top: 3rem;  
+                                                font-size: 1.2rem; 
+                                                font-family: Courier, monospace;
+                                                border-right: none;
+                                                justify-content: left;">sentiment analysis / <br/> MilaNLProc model</span>   
+
+                                                <span class="typology-feature">average sentence positivity</span>
+                                                <span>0.9882</span>
+
+                                                <span class="typology-feature">sentence positivity std</span>
+                                                <span>0.0482</span>
+
+
+
+
+
+                                            </div>
+                                            
+                                        </span>
+
+                                    </div>
+                                </li>
+                              </ul>
+                            <!--
+                            
+                        -->
                         </section>
 
                     </div>
@@ -91,15 +338,18 @@
             }
         }
 
-
+        const markers = [
+            //{long: 13, lat: 46}, // friuli
+            {long: 14, lat: 37.56}, // sicily
+        ];
 
         // The svg
         const svg = d3.select("svg")
         // Map and projection
         const projection = d3.geoMercator()
             .center([9, 47])                // GPS of location to zoom on
-            .scale(1700)                       // This is like the zoom
-            .translate([ 100,20 ])
+            .scale(1750)                       // This is like the zoom
+            .translate([ 100,30 ])
         
         // Load external data and boot
         //d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then( function(data){
@@ -118,9 +368,122 @@
                 .style("stroke", "black") 
                 .style("fill", "none") 
 
+
+                const Tooltip = d3.select('#map-contents')
+                    .append("div")
+                    .attr("class", "tooltip")
+                    .style("opacity", 1)
+                    .style("background-color", "white")
+                    .style("border", "solid")
+                    .style("border-width", "2px")
+                    .style("border-radius", "5px")
+                    .style("width", "100px")
+                    .style("height", "100px")
+
+                // Three function that change the tooltip when user hover / move / leave a cell
+                const mouseover = function(event, d) {
+                    Tooltip.style("opacity", 1)
+                    console.log('hover')
+                }
+
+                var mousemove = function(event, d) {
+
+                    console.log(d)
+                    Tooltip
+                        .html(d.name + "<br>" + "long: " + d.long + "<br>" + "lat: " + d.lat)
+                        .style("left", event.x/2 + "px")
+                        .style("top", -event.y/2 + "px")
+                        .style("opacity", 1)
+                }
+
+                var mouseleave = function(event, d) {
+                    Tooltip.style("opacity", 1)
+                }
+
+                // Add circles:
+                svg
+                .selectAll("myCircles")
+                .data(markers)
+                .enter()
+                .append("circle")
+                    .attr("cx", function(d){ return projection([d.long, d.lat])[0] })
+                    .attr("cy", function(d){ return projection([d.long, d.lat])[1] })
+                    .attr("r", 14)
+                    .attr("class", "circle")
+                    .style("fill", "#ff0000")
+                    .attr("stroke", "#bb3333")
+                    .attr("stroke-width", 3)
+                    .attr("fill-opacity", .2)
+                    .on("mouseover", mouseover)
+                    .on("mousemove", mousemove)
+                    .on("mouseleave", mouseleave)
+
+
+
+                
+                
             
             
-            console.log(svg.selectAll("path"))
+            //console.log(svg.selectAll("path"))
         })
+
+
+        const slidesContainer = document.getElementById("slides-container");
+        const slide = document.querySelector(".slide");
+        const prevButton = document.getElementById("slide-arrow-prev");
+        const nextButton = document.getElementById("slide-arrow-next");
+
+        
+
+
+        nextButton.addEventListener("click", () => {
+            const slideWidth = slide.clientWidth;
+            slidesContainer.scrollLeft += slideWidth;
+            
+            if (document.getElementById('slide-arrow-prev').classList.contains('arrow-disabled')){
+                document.getElementById('slide-arrow-prev').classList.remove('arrow-disabled')
+            }
+            document.getElementById('slide-arrow-next').classList.add('arrow-disabled')
+        });
+
+        prevButton.addEventListener("click", () => {
+            const slideWidth = slide.clientWidth;
+            slidesContainer.scrollLeft -= slideWidth;
+
+            if (document.getElementById('slide-arrow-next').classList.contains('arrow-disabled')){
+                document.getElementById('slide-arrow-next').classList.remove('arrow-disabled')
+            }
+            document.getElementById('slide-arrow-prev').classList.add('arrow-disabled')
+        });
+
+
+        fetch('../texts/gesù-e-san-pietro-in-friuli.txt')
+        .then(response => response.text())
+        .then(text => {
+            var node = document.querySelector('.original-text p');
+            node.innerText = text;
+        })
+
+        fetch('../texts/gesù-e-san-pietro-in-friuli.txt')
+        .then(response => response.text())
+        .then(text => {
+            var node = document.querySelector('.translation-text p');
+            node.innerText = text;
+        })
+
+
+        // var openFile = function(event) {
+        //     var input = event.target;
+
+        //     var reader = new FileReader();
+        //     reader.onload = function() {
+        //         var text = reader.result;
+        //         var node = document.getElementById('output');
+        //         node.innerText = text;
+        //         console.log(reader.result.substring(0, 200));
+        //     };
+        //     reader.readAsText(input.files[0]);
+        // };
+
     </script>
 </html>
