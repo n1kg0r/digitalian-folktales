@@ -313,6 +313,12 @@ body {
   .typology-table span.typology-feature {
     font-family: Courier, monospace;
     border-right: 1px solid grey;
+    
+  }
+
+  .typology-table span.typology-feature a, 
+  .typology-header a {
+    color: black;
   }
 
   .typology-table span.typology-header {
