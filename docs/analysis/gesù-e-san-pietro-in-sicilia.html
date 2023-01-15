@@ -115,6 +115,15 @@
                                             <a href="comparison.html" style="color: black;">compare stories</a>
                                         </div>
 
+                                        <div class="tooltip-line-current hidden" 
+                                            style="
+                                                width: 100%; 
+                                                font-size: 0.8rem;
+                                                font-family:'Courier New', Courier, monospace;
+                                            ">
+                                            you are here
+                                        </div>
+
 
                                     </span>
 
@@ -412,8 +421,8 @@
 
 
         const markers = [
-            {long: 13, lat: 46}, // friuli
-            //{long: 14, lat: 37.56}, // sicily
+            {long: 13, lat: 46, fill: "#ff0000", stroke: "#bb3333", yShift: 150, title: 'Gesù e San Pietro in Friuli'}, // friuli
+            {long: 14, lat: 37.56, fill: "#0000ff", stroke: "#3333bb", yShift: 150, title: 'Gesù e San Pietro in Sicilia'}, // sicily
         ];
 
         // The svg
@@ -481,18 +490,36 @@
 
                 // Three function that change the tooltip when user hover / move / leave a cell
                 const mouseover = function(event, d) {
-                    Tooltip.style("opacity", 1);
+                    Tooltip.style("opacity", 1)
+                        .classed('hidden', false)
                 }
 
                 var mousemove = function(event, d) {
                     
+                    d3.select('.tooltip-header')
+                        .text(d.title)
+
+
+                    if (d.title === 'Gesù e San Pietro in Sicilia') {
+                        d3.select('.tooltip-line-current')
+                            .classed('hidden', false)
+                        d3.selectAll('.tooltip-line')
+                            .classed('hidden', true)
+
+                    } else {
+                        d3.select('.tooltip-line-current')
+                            .classed('hidden', true)
+                        d3.selectAll('.tooltip-line')
+                            .classed('hidden', false)
+                    }
+
                     Tooltip
-                        
-                        //.style("left", projection([d.long, d.lat])[0] - 100 + 'px')
-                        //.style("top", projection([d.long, d.lat])[1] -100 + 'px')
                         .style("left", (event.x)/2 + "px")
-                        .style("top", (event.y)/2 + 200 + "px")
+                        .style("top", (event.y)/2 + d.yShift + "px")
                         .style("opacity", 1)
+                        .classed('hidden', false)
+
+                    
                 }
 
                 var mouseleave = function(event, d) {
@@ -513,8 +540,8 @@
                     .attr("cy", function(d){ return projection([d.long, d.lat])[1] })
                     .attr("r", 14)
                     .attr("class", "circle")
-                    .style("fill", "#ff0000")
-                    .attr("stroke", "#bb3333")
+                    .attr("fill", (d) => { return d.fill })
+                    .attr("stroke", (d) => { return d.stroke})
                     .attr("stroke-width", 3)
                     .attr("fill-opacity", .2)
                     .on("mouseover", mouseover)
@@ -542,7 +569,9 @@
                         var outside = (document.querySelector('.tooltip') !== event.target);
                         
                         if (outside) {
-                            Tooltip.style("opacity", 0);
+                            Tooltip
+                                .style("opacity", 0)
+                                .classed('hidden', true)
                         }
                     });
                 
